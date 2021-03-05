@@ -1,6 +1,11 @@
 # weather_app
 
-A basic weather app where user can see their current location weather and also they can see other city weather condition
+A basic weather app where user can see their current location weather and also they can see other city weather condition<br>
+ScreenShot
+
+![](1.gif)
+![](2.gif)
+
 
 ## Getting Started
 
