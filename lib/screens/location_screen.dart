@@ -26,28 +26,24 @@ class _LocationScreenState extends State<LocationScreen> {
 
   }
   void updateUI(dynamic weatherData){
-    if(weatherData == null){
-      temperature = 0;
-      weatherMsg = 'Error';
-      weatherIcon = 'something wrong';
+    setState(() {
+      if(weatherData == null){
+        temperature = 0;
+        weatherMsg = 'Error';
+        weatherIcon = 'something wrong';
 
-      return;
-    }
-    dynamic temp = weatherData['main']['temp'];
-    temperature = temp.toInt();
-    weatherMsg = weatherModel.getMessage(temperature);
+        return;
+      }
+      dynamic temp = weatherData['main']['temp'];
+      temperature = temp.toInt();
+      weatherMsg = weatherModel.getMessage(temperature);
 
-    condition = weatherData['weather'][0]['id'];
-    weatherIcon = weatherModel.getWeatherIcon(condition);
-    cityName = weatherData['name'];
-    print(cityName);
-
-
-    //print(temperature);
-    //print(cityName);
-
-
-}
+      condition = weatherData['weather'][0]['id'];
+      weatherIcon = weatherModel.getWeatherIcon(condition);
+      cityName = weatherData['name'];
+      print(cityName);
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
